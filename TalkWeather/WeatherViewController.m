@@ -7,28 +7,37 @@
 //
 
 #import "WeatherViewController.h"
-
+#import "WeatherInfo.h"
 @interface WeatherViewController ()
 
 @end
 
 @implementation WeatherViewController
-
+WeatherInfo *weatherInfo;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"WeatherViewController";
     // Do any additional setup after loading the view.
+    weatherInfo = [WeatherInfo weatherInfoBasic];
+    [self UIInitialize];
+    
+    
 }
 
 - (void) UIInitialize {
-    _cityLabel = [[UILabel alloc] init];
+    _cityLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 200, 50)];
+    _cityLabel.text = weatherInfo.city;
     [self.view addSubview:_cityLabel];
     
-    _statusLabel = [[UILabel alloc] init];
+    _statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 200, 50)];
+    _statusLabel.text = weatherInfo.status;
     [self.view addSubview:_statusLabel];
-    
-    _tempratureLabel = [[UILabel alloc] init];
+    [UIColor redColor];
+    _tempratureLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 150, 200, 50)];
+    NSString *temp = [NSString stringWithFormat:@"%ld",(long)weatherInfo.temprature];
+    NSDictionary *dic = @{NSForegroundColorAttributeName:[UIColor redColor]};
+    _tempratureLabel.attributedText = [[NSAttributedString alloc] initWithString:temp attributes:dic];
     [self.view addSubview:_tempratureLabel];
 }
 

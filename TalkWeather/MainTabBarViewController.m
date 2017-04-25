@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tabBar setTintColor:[[UIColor alloc]initWithRed:228.0/255 green:57.0/255 blue:67.0/255 alpha:1.0]];
+    self.tabBar.backgroundColor = [UIColor whiteColor];
     [self createViewControllers];
     
     // Do any additional setup after loading the view.
