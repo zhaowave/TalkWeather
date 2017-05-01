@@ -10,9 +10,9 @@
 #import "MeViewController.h"
 #import "WeatherViewController.h"
 
-#define TAB1 @"WeatherViewController"
+#define TAB1 @"天气"
 
-#define TAB2 @"MeViewController"
+#define TAB2 @"我"
 @interface MainTabBarViewController ()
 
 @end
@@ -21,37 +21,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tabBar setTintColor:[[UIColor alloc]initWithRed:228.0/255 green:57.0/255 blue:67.0/255 alpha:1.0]];
-    self.tabBar.backgroundColor = [UIColor whiteColor];
     [self createViewControllers];
-    
     // Do any additional setup after loading the view.
 }
 
 - (void) createViewControllers {
     
     _weatherViewcontrller = [[WeatherViewController alloc] init];
-    UINavigationController *ncv1 = [[UINavigationController alloc]initWithRootViewController:_weatherViewcontrller];
-    _weatherViewcontrller.tabBarItem.title = TAB1;
+    //_weatherViewcontrller.title = @"AAFDSAFDA";
+    //UINavigationController *ncv1 = [[UINavigationController alloc]initWithRootViewController:_weatherViewcontrller];
+    //_weatherViewcontrller.tabBarItem.title = TAB1;
     
     _meViewcontroller = [[MeViewController alloc] init];
-    UINavigationController *ncv2 = [[UINavigationController alloc] initWithRootViewController:_meViewcontroller];
-    _meViewcontroller.tabBarItem.title = TAB2;
-    self.viewControllers = @[ncv1,ncv2];
+    //_meViewcontroller.title = TAB2;
+    //UINavigationController *ncv2 = [[UINavigationController alloc] initWithRootViewController:_meViewcontroller];
+    //_meViewcontroller.tabBarItem.title = TAB2;
+    self.viewControllers = @[
+                            [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:nil andSelectImage:nil],
+                            [self initialNaviControllerWithViewController:_meViewcontroller andImage:@"tabbar_me" andSelectImage:@"tabbar_me"]
+                            ];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/**
+ *  返回取消渲染的image
+ */
+- (UIImage*)removeRendering:(NSString*)imageName
+{
+    UIImage* image = [UIImage imageNamed:imageName];
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
-*/
+- (UINavigationController *) initialNaviControllerWithViewController:(UIViewController *)viewController andImage:(NSString *)image andSelectImage:(NSString*)selectImgName{
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    naviController.tabBarItem =
+    [[UITabBarItem alloc] initWithTitle:viewController.title
+                                  image:[self removeRendering:image]
+                          selectedImage:[self removeRendering:selectImgName]];
+    return naviController;
+}
 
 @end

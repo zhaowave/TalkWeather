@@ -17,12 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
      MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
-    _mainNavCtroller = [[UINavigationController alloc] initWithRootViewController:mainTabBarViewController];
-    [_window setRootViewController:_mainNavCtroller];
+    [_window setRootViewController:mainTabBarViewController];
     [_window makeKeyWindow];
     // Override point for customization after application launch.
-    
+    //[self changeNav];
     [self creatShortcutItem];
 //    UIApplicationShortcutItem *shortcutItem = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
 //    //如果是从快捷选项标签启动app，则根据不同标识执行不同操作，然后返回NO，防止调用- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
@@ -87,12 +87,11 @@
     //添加到快捷选项数组
     [UIApplication sharedApplication].shortcutItems = @[item,item2];
 }
-
+//
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
     
     MainTabBarViewController *mainTabBarViewController = [[MainTabBarViewController alloc] init];
-    _mainNavCtroller = [[UINavigationController alloc] initWithRootViewController:mainTabBarViewController];
-    [_window setRootViewController:_mainNavCtroller];
+    [_window setRootViewController:mainTabBarViewController];
     [self.window makeKeyAndVisible];
     
     //判断先前我们设置的快捷选项标签唯一标识，根据不同标识执行不同操作
@@ -110,6 +109,24 @@
     if (completionHandler) {
         completionHandler(YES);
     }
+}
+
+/**
+ *  全局改变Nav
+ */
+- (void)changeNav
+{
+    //设置NavigationBar背景颜色
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:54 / 255.0
+                                                                  green:53 / 255.0
+                                                                   blue:58 / 255.0
+                                                                  alpha:1]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                           }];
+    //不设置这个无法修改状态栏字体颜色
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
 }
 
 @end
