@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MeExtentsTableViewCell.h"
 
-@interface MeTableViewDateSource : NSObject <UITableViewDelegate,UITableViewDataSource>
+@interface MeTableViewDateSource : NSObject <UITableViewDelegate,UITableViewDataSource,UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end

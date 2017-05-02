@@ -9,6 +9,8 @@
 #import "MeViewController.h"
 #import "Masonry.h"
 #import "MeTableViewDateSource.h"
+#define LOGINBUTTONSIZE 40
+#define SPACEBETWEENBTN 20
 @interface MeViewController () {
     UITableView *tableView;
     MeTableViewDateSource *dataSource;
@@ -23,10 +25,11 @@
     [super viewDidLoad];
     self.title = @"我";
     self.view.backgroundColor = [UIColor whiteColor];
+    //[self.navigationController setNavigationBarHidden:YES];
     
     [self addLoginTabView];
     
-    [self addTableView];
+    [self addMainTableView];
     
 }
 
@@ -52,39 +55,39 @@
     [loginView addSubview:qqLoginBtn];
 //手机号登陆
     [phoneLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(loginView.mas_top).offset(40);
-        make.left.equalTo(loginView.mas_left).offset((self.view.bounds.size.width - 300)/2);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.top.equalTo(loginView.mas_top).offset(50);
+        make.left.equalTo(loginView.mas_left).offset((self.view.bounds.size.width - (LOGINBUTTONSIZE*4 + SPACEBETWEENBTN*3))/2);
+        make.width.mas_equalTo(LOGINBUTTONSIZE);
+        make.height.mas_equalTo(LOGINBUTTONSIZE);
     }];
-    phoneLoginBtn.layer.cornerRadius = 30;
+    phoneLoginBtn.layer.cornerRadius = LOGINBUTTONSIZE/2;
     phoneLoginBtn.backgroundColor = [UIColor greenColor];
 //微信登陆
     [wxLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
-        make.left.equalTo(phoneLoginBtn.mas_right).offset(20);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.left.equalTo(phoneLoginBtn.mas_right).offset(SPACEBETWEENBTN);
+        make.width.mas_equalTo(LOGINBUTTONSIZE);
+        make.height.mas_equalTo(LOGINBUTTONSIZE);
     }];
-    wxLoginBtn.layer.cornerRadius = 30;
+    wxLoginBtn.layer.cornerRadius = LOGINBUTTONSIZE/2;
     wxLoginBtn.backgroundColor = [UIColor redColor];
 //微博登陆
     [wbLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
-        make.left.equalTo(wxLoginBtn.mas_right).offset(20);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.left.equalTo(wxLoginBtn.mas_right).offset(SPACEBETWEENBTN);
+        make.width.mas_equalTo(LOGINBUTTONSIZE);
+        make.height.mas_equalTo(LOGINBUTTONSIZE);
     }];
-    wbLoginBtn.layer.cornerRadius = 30;
+    wbLoginBtn.layer.cornerRadius = LOGINBUTTONSIZE/2;
     wbLoginBtn.backgroundColor = [UIColor whiteColor];
 //qq登陆
     [qqLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
-        make.left.equalTo(wbLoginBtn.mas_right).offset(20);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.left.equalTo(wbLoginBtn.mas_right).offset(SPACEBETWEENBTN);
+        make.width.mas_equalTo(LOGINBUTTONSIZE);
+        make.height.mas_equalTo(LOGINBUTTONSIZE);
     }];
-    qqLoginBtn.layer.cornerRadius = 30;
+    qqLoginBtn.layer.cornerRadius = LOGINBUTTONSIZE/2;
     qqLoginBtn.backgroundColor = [UIColor yellowColor];
     
 //登陆查看更多内容
@@ -95,8 +98,8 @@
     [loginView addSubview:loginMoreInfo];
     
     [loginMoreInfo mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(phoneLoginBtn.mas_bottom).offset(10);
-        make.left.equalTo(phoneLoginBtn.mas_right).offset(20);
+        make.top.equalTo(phoneLoginBtn.mas_bottom).offset(15);
+        make.left.equalTo(phoneLoginBtn.mas_right).offset(5);
         make.height.mas_equalTo(20);
     }];
 
@@ -105,7 +108,7 @@
     
 }
 
--(void) addTableView {
+-(void) addMainTableView {
     tableView = [[UITableView alloc] init];
     tableView.indicatorStyle = UIScrollViewIndicatorStyleBlack;
     [self.view addSubview:tableView];
