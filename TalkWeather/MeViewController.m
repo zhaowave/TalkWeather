@@ -9,6 +9,7 @@
 #import "MeViewController.h"
 #import "Masonry.h"
 #import "MeTableViewDateSource.h"
+#import "UIColor+HexString.h"
 @interface MeViewController () {
     UITableView *tableView;
     MeTableViewDateSource *dataSource;
@@ -33,7 +34,8 @@
 - (void) addLoginTabView {
     //login view
     loginView = [[UIView alloc] init];
-    loginView.backgroundColor = [UIColor blueColor];
+    //33 a3 dc
+    loginView.backgroundColor = [UIColor colorWithHexString:@"33a3dc"];
     [self.view addSubview:loginView];
     [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(44);
@@ -43,9 +45,17 @@
     }];
     //create 4 login button
     UIButton *phoneLoginBtn = [[UIButton alloc] init];
+    [phoneLoginBtn setTitle:@"手机" forState:UIControlStateNormal];
+    [phoneLoginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     UIButton *wxLoginBtn = [[UIButton alloc] init];
+    [wxLoginBtn setTitle:@"微信" forState:UIControlStateNormal];
+    [wxLoginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     UIButton *wbLoginBtn = [[UIButton alloc] init];
+    [wbLoginBtn setTitle:@"微博" forState:UIControlStateNormal];
+    [wbLoginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     UIButton *qqLoginBtn = [[UIButton alloc] init];
+    [qqLoginBtn setTitle:@"QQ" forState:UIControlStateNormal];
+    [qqLoginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [loginView addSubview:phoneLoginBtn];
     [loginView addSubview:wxLoginBtn];
     [loginView addSubview:wbLoginBtn];
@@ -58,7 +68,7 @@
         make.height.mas_equalTo(60);
     }];
     phoneLoginBtn.layer.cornerRadius = 30;
-    phoneLoginBtn.backgroundColor = [UIColor greenColor];
+    phoneLoginBtn.backgroundColor = [UIColor whiteColor];
 //微信登陆
     [wxLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
@@ -67,7 +77,7 @@
         make.height.mas_equalTo(60);
     }];
     wxLoginBtn.layer.cornerRadius = 30;
-    wxLoginBtn.backgroundColor = [UIColor redColor];
+    wxLoginBtn.backgroundColor = [UIColor whiteColor];
 //微博登陆
     [wbLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
@@ -85,7 +95,7 @@
         make.height.mas_equalTo(60);
     }];
     qqLoginBtn.layer.cornerRadius = 30;
-    qqLoginBtn.backgroundColor = [UIColor yellowColor];
+    qqLoginBtn.backgroundColor = [UIColor whiteColor];
     
 //登陆查看更多内容
     UILabel *loginMoreInfo = [[UILabel alloc] init];

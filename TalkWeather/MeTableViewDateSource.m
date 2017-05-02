@@ -8,6 +8,8 @@
 
 #import "MeTableViewDateSource.h"
 
+#import "UIColor+HexString.h"
+
 @implementation MeTableViewDateSource
 
 #pragma mark tableview datasource
@@ -31,7 +33,7 @@
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.textLabel.text = @"海淀区";
     cell.detailTextLabel.text = @"更换地点";
-    cell.detailTextLabel.textColor = [UIColor blueColor];
+    cell.detailTextLabel.textColor = [UIColor colorWithHexString:@"33a3dc"];
     return cell;
 }
 #pragma mark tableview delegate
