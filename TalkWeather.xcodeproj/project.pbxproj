@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E58D0A9C7DF26D55ADC5F65 /* libPods-TalkWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F74ACFBE7E967698A5D443 /* libPods-TalkWeather.a */; };
+		BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */; };
 		BA1496461EADEC4200D2B740 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496451EADEC4200D2B740 /* MainTabBarViewController.m */; };
 		BA14964A1EADF26600D2B740 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496491EADF26600D2B740 /* MeViewController.m */; };
 		BA14964D1EADF27D00D2B740 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA14964C1EADF27D00D2B740 /* WeatherViewController.m */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		70F74ACFBE7E967698A5D443 /* libPods-TalkWeather.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TalkWeather.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9324B66A074B9FA844E634 /* Pods-TalkWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-TalkWeather/Pods-TalkWeather.release.xcconfig"; sourceTree = "<group>"; };
+		BA10D3F31EB84CFB00BA44C7 /* MeTableViewDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewDateSource.h; sourceTree = "<group>"; };
+		BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewDateSource.m; sourceTree = "<group>"; };
 		BA1496441EADEC4200D2B740 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		BA1496451EADEC4200D2B740 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		BA1496481EADF26600D2B740 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -69,6 +72,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA10D3F21EB84CB900BA44C7 /* MeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BA1496481EADF26600D2B740 /* MeViewController.h */,
+				BA1496491EADF26600D2B740 /* MeViewController.m */,
+				BA10D3F31EB84CFB00BA44C7 /* MeTableViewDateSource.h */,
+				BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */,
+			);
+			name = MeViewController;
+			sourceTree = "<group>";
+		};
 		BA1496431EADEBE100D2B740 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +95,7 @@
 		BA1496471EADEC8D00D2B740 /* Contrllolers */ = {
 			isa = PBXGroup;
 			children = (
-				BA1496481EADF26600D2B740 /* MeViewController.h */,
-				BA1496491EADF26600D2B740 /* MeViewController.m */,
+				BA10D3F21EB84CB900BA44C7 /* MeViewController */,
 				BA14964B1EADF27D00D2B740 /* WeatherViewController.h */,
 				BA14964C1EADF27D00D2B740 /* WeatherViewController.m */,
 			);
@@ -292,6 +305,7 @@
 				BA14964D1EADF27D00D2B740 /* WeatherViewController.m in Sources */,
 				BA1496461EADEC4200D2B740 /* MainTabBarViewController.m in Sources */,
 				BA1496511EADF85700D2B740 /* WeatherInfo.m in Sources */,
+				BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */,
 				BA29FDE31EAA077500967D49 /* AppDelegate.m in Sources */,
 				BA29FDE01EAA077500967D49 /* main.m in Sources */,
 				BA14964A1EADF26600D2B740 /* MeViewController.m in Sources */,

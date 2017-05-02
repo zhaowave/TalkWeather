@@ -30,12 +30,12 @@
     _weatherViewcontrller = [[WeatherViewController alloc] init];
     //_weatherViewcontrller.title = @"AAFDSAFDA";
     //UINavigationController *ncv1 = [[UINavigationController alloc]initWithRootViewController:_weatherViewcontrller];
-    //_weatherViewcontrller.tabBarItem.title = TAB1;
+    _weatherViewcontrller.title = TAB1;
     
     _meViewcontroller = [[MeViewController alloc] init];
-    //_meViewcontroller.title = TAB2;
+    _meViewcontroller.title = TAB2;
     //UINavigationController *ncv2 = [[UINavigationController alloc] initWithRootViewController:_meViewcontroller];
-    //_meViewcontroller.tabBarItem.title = TAB2;
+    _meViewcontroller.tabBarItem.title = TAB2;
     self.viewControllers = @[
                             [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:nil andSelectImage:nil],
                             [self initialNaviControllerWithViewController:_meViewcontroller andImage:@"tabbar_me" andSelectImage:@"tabbar_me"]

@@ -7,8 +7,13 @@
 //
 
 #import "MeViewController.h"
-
-@interface MeViewController ()
+#import "Masonry.h"
+#import "MeTableViewDateSource.h"
+@interface MeViewController () {
+    UITableView *tableView;
+    MeTableViewDateSource *dataSource;
+    UIView *loginView;
+}
 
 @end
 
@@ -18,7 +23,101 @@
     [super viewDidLoad];
     self.title = @"我";
     self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view.
+    
+    [self addLoginTabView];
+    
+    [self addTableView];
+    
+}
+
+- (void) addLoginTabView {
+    //login view
+    loginView = [[UIView alloc] init];
+    loginView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:loginView];
+    [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(44);
+        make.left.equalTo(self.view.mas_left).offset(0);
+        make.width.equalTo(self.view.mas_width);
+        make.height.equalTo(self.view.mas_height).multipliedBy(0.2);
+    }];
+    //create 4 login button
+    UIButton *phoneLoginBtn = [[UIButton alloc] init];
+    UIButton *wxLoginBtn = [[UIButton alloc] init];
+    UIButton *wbLoginBtn = [[UIButton alloc] init];
+    UIButton *qqLoginBtn = [[UIButton alloc] init];
+    [loginView addSubview:phoneLoginBtn];
+    [loginView addSubview:wxLoginBtn];
+    [loginView addSubview:wbLoginBtn];
+    [loginView addSubview:qqLoginBtn];
+//手机号登陆
+    [phoneLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(loginView.mas_top).offset(40);
+        make.left.equalTo(loginView.mas_left).offset((self.view.bounds.size.width - 300)/2);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
+    phoneLoginBtn.layer.cornerRadius = 30;
+    phoneLoginBtn.backgroundColor = [UIColor greenColor];
+//微信登陆
+    [wxLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
+        make.left.equalTo(phoneLoginBtn.mas_right).offset(20);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
+    wxLoginBtn.layer.cornerRadius = 30;
+    wxLoginBtn.backgroundColor = [UIColor redColor];
+//微博登陆
+    [wbLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
+        make.left.equalTo(wxLoginBtn.mas_right).offset(20);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
+    wbLoginBtn.layer.cornerRadius = 30;
+    wbLoginBtn.backgroundColor = [UIColor whiteColor];
+//qq登陆
+    [qqLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneLoginBtn.mas_top).offset(0);
+        make.left.equalTo(wbLoginBtn.mas_right).offset(20);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(60);
+    }];
+    qqLoginBtn.layer.cornerRadius = 30;
+    qqLoginBtn.backgroundColor = [UIColor yellowColor];
+    
+//登陆查看更多内容
+    UILabel *loginMoreInfo = [[UILabel alloc] init];
+    loginMoreInfo.text = @"登陆查看更多内容";
+    loginMoreInfo.textColor = [UIColor whiteColor];
+    
+    [loginView addSubview:loginMoreInfo];
+    
+    [loginMoreInfo mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(phoneLoginBtn.mas_bottom).offset(10);
+        make.left.equalTo(phoneLoginBtn.mas_right).offset(20);
+        make.height.mas_equalTo(20);
+    }];
+
+    
+    
+    
+}
+
+-(void) addTableView {
+    tableView = [[UITableView alloc] init];
+    tableView.indicatorStyle = UIScrollViewIndicatorStyleBlack;
+    [self.view addSubview:tableView];
+    dataSource = [[MeTableViewDateSource alloc] init];
+    tableView.dataSource = dataSource;
+    tableView.delegate = dataSource;
+    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(loginView.mas_bottom).offset(0);
+        make.bottom.equalTo(self.view.mas_bottom).offset(0);
+        make.left.equalTo(loginView.mas_left).offset(0);
+        make.right.equalTo(loginView.mas_right).offset(0);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +129,6 @@
 {
     return UIStatusBarStyleLightContent;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
