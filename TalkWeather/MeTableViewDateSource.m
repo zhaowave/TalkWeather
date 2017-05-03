@@ -8,6 +8,8 @@
 
 #import "MeTableViewDateSource.h"
 
+#import "UIColor+HexString.h"
+
 @implementation MeTableViewDateSource
 
 #pragma mark tableview datasource

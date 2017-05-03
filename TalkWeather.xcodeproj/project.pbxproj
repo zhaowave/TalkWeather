@@ -23,6 +23,7 @@
 		C978296D1EB621A8005EEDE1 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C978296C1EB621A8005EEDE1 /* image.xcassets */; };
 		C978296F1EB62229005EEDE1 /* tabbar_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C978296E1EB62229005EEDE1 /* tabbar_me@2x.png */; };
 		C97829711EB62236005EEDE1 /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97829701EB62236005EEDE1 /* tabbar_me@3x.png */; };
+		C97829841EB8B3DD005EEDE1 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = C97829831EB8B3DD005EEDE1 /* UIColor+HexString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		C978296C1EB621A8005EEDE1 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
 		C978296E1EB62229005EEDE1 /* tabbar_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_me@2x.png"; path = "image.xcassets/Image.imageset/tabbar_me@2x.png"; sourceTree = "<group>"; };
 		C97829701EB62236005EEDE1 /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_me@3x.png"; path = "image.xcassets/Image.imageset/tabbar_me@3x.png"; sourceTree = "<group>"; };
+		C97829821EB8B3DD005EEDE1 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		C97829831EB8B3DD005EEDE1 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		E190DAC0448C1D78A0D3548E /* Pods-TalkWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TalkWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TalkWeather/Pods-TalkWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +148,7 @@
 		BA29FDDD1EAA077500967D49 /* TalkWeather */ = {
 			isa = PBXGroup;
 			children = (
+				C97829751EB8B081005EEDE1 /* Utils */,
 				BA14964E1EADF82F00D2B740 /* models */,
 				BA1496471EADEC8D00D2B740 /* Contrllolers */,
 				BA1496431EADEBE100D2B740 /* MainTab */,
@@ -177,6 +181,15 @@
 				C978296C1EB621A8005EEDE1 /* image.xcassets */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		C97829751EB8B081005EEDE1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C97829821EB8B3DD005EEDE1 /* UIColor+HexString.h */,
+				C97829831EB8B3DD005EEDE1 /* UIColor+HexString.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		EB11F1083D052343E3EB6D4F /* Pods */ = {
@@ -317,6 +330,7 @@
 			files = (
 				BA14964D1EADF27D00D2B740 /* WeatherViewController.m in Sources */,
 				BA1496461EADEC4200D2B740 /* MainTabBarViewController.m in Sources */,
+				C97829841EB8B3DD005EEDE1 /* UIColor+HexString.m in Sources */,
 				BA1496511EADF85700D2B740 /* WeatherInfo.m in Sources */,
 				BA10D3F91EB87C2A00BA44C7 /* MeExtentsTableViewCell.m in Sources */,
 				BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */,
