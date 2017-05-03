@@ -9,6 +9,7 @@
 #import "MainTabBarViewController.h"
 #import "MeViewController.h"
 #import "WeatherViewController.h"
+#import "UIImage+Tint.h"
 
 #define TAB1 @"天气"
 
@@ -37,7 +38,7 @@
     //UINavigationController *ncv2 = [[UINavigationController alloc] initWithRootViewController:_meViewcontroller];
     _meViewcontroller.tabBarItem.title = TAB2;
     self.viewControllers = @[
-                            [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:nil andSelectImage:nil],
+                            [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:@"tabbar_weather" andSelectImage:@"tabbar_weather"],
                             [self initialNaviControllerWithViewController:_meViewcontroller andImage:@"tabbar_me" andSelectImage:@"tabbar_me"]
                             ];
 }
@@ -59,7 +60,7 @@
     naviController.tabBarItem =
     [[UITabBarItem alloc] initWithTitle:viewController.title
                                   image:[self removeRendering:image]
-                          selectedImage:[self removeRendering:selectImgName]];
+                          selectedImage:[[self removeRendering:selectImgName] imageWithTintColor:[UIColor blueColor]]];
     return naviController;
 }
 

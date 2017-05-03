@@ -10,8 +10,11 @@
 
 @interface WeatherViewController : UIViewController
 
+@property(nonatomic, strong) UIScrollView *scrollView;
+
 @property(nonatomic, strong) UILabel *cityLabel;
 @property(nonatomic, strong) UILabel *statusLabel;
 @property(nonatomic, strong) UILabel *tempratureLabel;
+@property(nonatomic, strong) UIImageView *statusImage;
 
 @end

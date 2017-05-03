@@ -10,6 +10,9 @@
 		5E58D0A9C7DF26D55ADC5F65 /* libPods-TalkWeather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F74ACFBE7E967698A5D443 /* libPods-TalkWeather.a */; };
 		BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */; };
 		BA10D3F91EB87C2A00BA44C7 /* MeExtentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D3F81EB87C2A00BA44C7 /* MeExtentsTableViewCell.m */; };
+		BA10D4221EB97B3C00BA44C7 /* WeatherServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D4211EB97B3C00BA44C7 /* WeatherServer.m */; };
+		BA10D4281EB9BDB500BA44C7 /* tabbar_weather.png in Resources */ = {isa = PBXBuildFile; fileRef = BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */; };
+		BA10D42B1EB9C24400BA44C7 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D42A1EB9C24400BA44C7 /* UIImage+Tint.m */; };
 		BA1496461EADEC4200D2B740 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496451EADEC4200D2B740 /* MainTabBarViewController.m */; };
 		BA14964A1EADF26600D2B740 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496491EADF26600D2B740 /* MeViewController.m */; };
 		BA14964D1EADF27D00D2B740 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA14964C1EADF27D00D2B740 /* WeatherViewController.m */; };
@@ -33,6 +36,11 @@
 		BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewDateSource.m; sourceTree = "<group>"; };
 		BA10D3F71EB87C2A00BA44C7 /* MeExtentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeExtentsTableViewCell.h; sourceTree = "<group>"; };
 		BA10D3F81EB87C2A00BA44C7 /* MeExtentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeExtentsTableViewCell.m; sourceTree = "<group>"; };
+		BA10D4201EB97B3C00BA44C7 /* WeatherServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherServer.h; sourceTree = "<group>"; };
+		BA10D4211EB97B3C00BA44C7 /* WeatherServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherServer.m; sourceTree = "<group>"; };
+		BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_weather.png; path = ../../../../Downloads/tabbar_weather.png; sourceTree = "<group>"; };
+		BA10D4291EB9C24400BA44C7 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		BA10D42A1EB9C24400BA44C7 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		BA1496441EADEC4200D2B740 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		BA1496451EADEC4200D2B740 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		BA1496481EADF26600D2B740 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -78,7 +86,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA10D3F21EB84CB900BA44C7 /* MeViewController */ = {
+		BA10D3F21EB84CB900BA44C7 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				BA10D3F61EB87BE700BA44C7 /* Cells */,
@@ -87,7 +95,7 @@
 				BA10D3F31EB84CFB00BA44C7 /* MeTableViewDateSource.h */,
 				BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */,
 			);
-			name = MeViewController;
+			name = Me;
 			sourceTree = "<group>";
 		};
 		BA10D3F61EB87BE700BA44C7 /* Cells */ = {
@@ -97,6 +105,35 @@
 				BA10D3F81EB87C2A00BA44C7 /* MeExtentsTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		BA10D3FA1EB95F7300BA44C7 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				BA14964B1EADF27D00D2B740 /* WeatherViewController.h */,
+				BA14964C1EADF27D00D2B740 /* WeatherViewController.m */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		BA10D42C1EB9C39900BA44C7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C97829821EB8B3DD005EEDE1 /* UIColor+HexString.h */,
+				C97829831EB8B3DD005EEDE1 /* UIColor+HexString.m */,
+				BA10D4291EB9C24400BA44C7 /* UIImage+Tint.h */,
+				BA10D42A1EB9C24400BA44C7 /* UIImage+Tint.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		BA10D42E1EB9C3C100BA44C7 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				BA10D4201EB97B3C00BA44C7 /* WeatherServer.h */,
+				BA10D4211EB97B3C00BA44C7 /* WeatherServer.m */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 		BA1496431EADEBE100D2B740 /* MainTab */ = {
@@ -111,9 +148,8 @@
 		BA1496471EADEC8D00D2B740 /* Contrllolers */ = {
 			isa = PBXGroup;
 			children = (
-				BA10D3F21EB84CB900BA44C7 /* MeViewController */,
-				BA14964B1EADF27D00D2B740 /* WeatherViewController.h */,
-				BA14964C1EADF27D00D2B740 /* WeatherViewController.m */,
+				BA10D3FA1EB95F7300BA44C7 /* Weather */,
+				BA10D3F21EB84CB900BA44C7 /* Me */,
 			);
 			name = Contrllolers;
 			sourceTree = "<group>";
@@ -175,6 +211,7 @@
 		C97829631EB61D0C005EEDE1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */,
 				C978296A1EB6212B005EEDE1 /* bgimg.png */,
 				C978296E1EB62229005EEDE1 /* tabbar_me@2x.png */,
 				C97829701EB62236005EEDE1 /* tabbar_me@3x.png */,
@@ -186,8 +223,8 @@
 		C97829751EB8B081005EEDE1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C97829821EB8B3DD005EEDE1 /* UIColor+HexString.h */,
-				C97829831EB8B3DD005EEDE1 /* UIColor+HexString.m */,
+				BA10D42E1EB9C3C100BA44C7 /* Server */,
+				BA10D42C1EB9C39900BA44C7 /* Category */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -267,6 +304,7 @@
 				BA29FDEB1EAA077500967D49 /* Assets.xcassets in Resources */,
 				C978296F1EB62229005EEDE1 /* tabbar_me@2x.png in Resources */,
 				C978296B1EB6212B005EEDE1 /* bgimg.png in Resources */,
+				BA10D4281EB9BDB500BA44C7 /* tabbar_weather.png in Resources */,
 				C97829711EB62236005EEDE1 /* tabbar_me@3x.png in Resources */,
 				BA29FDE91EAA077500967D49 /* Main.storyboard in Resources */,
 				C978296D1EB621A8005EEDE1 /* image.xcassets in Resources */,
@@ -333,10 +371,12 @@
 				C97829841EB8B3DD005EEDE1 /* UIColor+HexString.m in Sources */,
 				BA1496511EADF85700D2B740 /* WeatherInfo.m in Sources */,
 				BA10D3F91EB87C2A00BA44C7 /* MeExtentsTableViewCell.m in Sources */,
+				BA10D4221EB97B3C00BA44C7 /* WeatherServer.m in Sources */,
 				BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */,
 				BA29FDE31EAA077500967D49 /* AppDelegate.m in Sources */,
 				BA29FDE01EAA077500967D49 /* main.m in Sources */,
 				BA14964A1EADF26600D2B740 /* MeViewController.m in Sources */,
+				BA10D42B1EB9C24400BA44C7 /* UIImage+Tint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
