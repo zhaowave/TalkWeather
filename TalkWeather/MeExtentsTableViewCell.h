@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeExtentsTableViewCell : UITableViewCell <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface MeExtentsTableViewCell : UITableViewCell
 @property(strong, nonatomic) UICollectionView *collectionView;
 @end

@@ -16,6 +16,9 @@
         info.city = @"北京";
         info.status = @"晴";
         info.temprature = 26;
+        info.maxTmp = 26;
+        info.minTmp = 26;
+        info.status = @"101";
     }
     return  info;
 }

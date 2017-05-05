@@ -23,7 +23,7 @@
 - (void) getHourlyWeatherInfoWithBlock:(GetHourlyWeatherInfoBlock)block{
     NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
-    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/weather?city=beijing&key=0698c80e890e4d8abfabe047fdcde2b2"];
+    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/now?city=beijing&key=0698c80e890e4d8abfabe047fdcde2b2"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error) {
@@ -33,9 +33,13 @@
             NSLog(@"API Request Success!");
             WeatherInfo *weatherInfo = [WeatherInfo weatherInfoBasic];
             NSDictionary *dict = [[responseObject objectForKey:@"HeWeather5"] objectAtIndex:0];
-            NSArray *hourlyForecast = [dict objectForKey:@"hourly_forecast"];
-            weatherInfo.temprature = [[[hourlyForecast objectAtIndex:0] objectForKey:@"tmp"] integerValue];
-            weatherInfo.status = [[[hourlyForecast objectAtIndex:0] objectForKey:@"cond"] objectForKey:@"code"];
+            NSDictionary *nowForecast = [dict objectForKey:@"now"];
+            weatherInfo.temprature = [[nowForecast objectForKey:@"tmp"] integerValue];
+            weatherInfo.statusCode = [[nowForecast objectForKey:@"cond"] objectForKey:@"code"];
+            weatherInfo.status = [[nowForecast objectForKey:@"cond"] objectForKey:@"txt"];
+        
+
+            
             if (block) {
                 block(weatherInfo,error);
             }
@@ -43,7 +47,60 @@
         }
     }];
     [task resume];
-    
-    
 }
+
+- (void) getTodayBasicWeatherInfoWithBlock:(GetHourlyWeatherInfoBlock)block {
+    NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
+    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/weather?city=beijing&key=0698c80e890e4d8abfabe047fdcde2b2"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"API request Error!");
+            block(nil,error);
+        }else {
+            WeatherInfo *weatherInfo = [WeatherInfo weatherInfoBasic];
+            NSDictionary *dict = [[responseObject objectForKey:@"HeWeather5"] objectAtIndex:0];
+            NSArray *dailyForecast = [dict objectForKey:@"daily_forecast"];
+            weatherInfo.maxTmp = [[[[dailyForecast objectAtIndex:0] objectForKey:@"tmp"] objectForKey:@"max"] integerValue];
+            weatherInfo.minTmp =  [[[[dailyForecast objectAtIndex:0] objectForKey:@"tmp"] objectForKey:@"min"] integerValue];
+            weatherInfo.statusCode = [[[dailyForecast objectAtIndex:0] objectForKey:@"cond"] objectForKey:@"code_d"];
+            weatherInfo.status = [[[dailyForecast objectAtIndex:0] objectForKey:@"cond"] objectForKey:@"txt_d"];
+            
+            
+            if (block) {
+                block(weatherInfo,error);
+            }
+        }
+    }];
+    [task resume];
+}
+
+- (void) getTomorrowBasicWeatherInfoWithBlock:(GetHourlyWeatherInfoBlock)block {
+    NSURLSessionConfiguration *conf = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:conf];
+    NSURL *url = [NSURL URLWithString:@"https://free-api.heweather.com/v5/forecast?city=beijing&key=0698c80e890e4d8abfabe047fdcde2b2"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSessionDataTask *task = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"API request Error!");
+            block(nil,error);
+        }else {
+            WeatherInfo *weatherInfo = [WeatherInfo weatherInfoBasic];
+            NSDictionary *dict = [[responseObject objectForKey:@"HeWeather5"] objectAtIndex:0];
+            NSArray *dailyForecast = [dict objectForKey:@"daily_forecast"];
+            weatherInfo.maxTmp = [[[[dailyForecast objectAtIndex:0] objectForKey:@"tmp"] objectForKey:@"max"] integerValue];
+            weatherInfo.minTmp =  [[[[dailyForecast objectAtIndex:0] objectForKey:@"tmp"] objectForKey:@"min"] integerValue];
+            weatherInfo.statusCode = [[[dailyForecast objectAtIndex:0] objectForKey:@"cond"] objectForKey:@"code_d"];
+            weatherInfo.status = [[[dailyForecast objectAtIndex:0] objectForKey:@"cond"] objectForKey:@"txt_d"];
+            
+            
+            if (block) {
+                block(weatherInfo,error);
+            }
+        }
+    }];
+    [task resume];
+}
+
 @end
