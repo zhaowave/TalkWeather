@@ -11,7 +11,6 @@
 		BA10D3F51EB84CFB00BA44C7 /* MeTableViewDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D3F41EB84CFB00BA44C7 /* MeTableViewDateSource.m */; };
 		BA10D3F91EB87C2A00BA44C7 /* MeExtentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D3F81EB87C2A00BA44C7 /* MeExtentsTableViewCell.m */; };
 		BA10D4221EB97B3C00BA44C7 /* WeatherServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D4211EB97B3C00BA44C7 /* WeatherServer.m */; };
-		BA10D4281EB9BDB500BA44C7 /* tabbar_weather.png in Resources */ = {isa = PBXBuildFile; fileRef = BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */; };
 		BA10D42B1EB9C24400BA44C7 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = BA10D42A1EB9C24400BA44C7 /* UIImage+Tint.m */; };
 		BA1496461EADEC4200D2B740 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496451EADEC4200D2B740 /* MainTabBarViewController.m */; };
 		BA14964A1EADF26600D2B740 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1496491EADF26600D2B740 /* MeViewController.m */; };
@@ -38,7 +37,6 @@
 		BA10D3F81EB87C2A00BA44C7 /* MeExtentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeExtentsTableViewCell.m; sourceTree = "<group>"; };
 		BA10D4201EB97B3C00BA44C7 /* WeatherServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherServer.h; sourceTree = "<group>"; };
 		BA10D4211EB97B3C00BA44C7 /* WeatherServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherServer.m; sourceTree = "<group>"; };
-		BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_weather.png; path = ../../../../Downloads/tabbar_weather.png; sourceTree = "<group>"; };
 		BA10D4291EB9C24400BA44C7 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
 		BA10D42A1EB9C24400BA44C7 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		BA1496441EADEC4200D2B740 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 		C97829631EB61D0C005EEDE1 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				BA10D4271EB9BDB500BA44C7 /* tabbar_weather.png */,
 				C978296A1EB6212B005EEDE1 /* bgimg.png */,
 				C978296E1EB62229005EEDE1 /* tabbar_me@2x.png */,
 				C97829701EB62236005EEDE1 /* tabbar_me@3x.png */,
@@ -304,7 +301,6 @@
 				BA29FDEB1EAA077500967D49 /* Assets.xcassets in Resources */,
 				C978296F1EB62229005EEDE1 /* tabbar_me@2x.png in Resources */,
 				C978296B1EB6212B005EEDE1 /* bgimg.png in Resources */,
-				BA10D4281EB9BDB500BA44C7 /* tabbar_weather.png in Resources */,
 				C97829711EB62236005EEDE1 /* tabbar_me@3x.png in Resources */,
 				BA29FDE91EAA077500967D49 /* Main.storyboard in Resources */,
 				C978296D1EB621A8005EEDE1 /* image.xcassets in Resources */,

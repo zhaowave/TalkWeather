@@ -38,7 +38,7 @@
     //UINavigationController *ncv2 = [[UINavigationController alloc] initWithRootViewController:_meViewcontroller];
     _meViewcontroller.tabBarItem.title = TAB2;
     self.viewControllers = @[
-                            [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:@"tabbar_weather" andSelectImage:@"tabbar_weather"],
+                            [self initialNaviControllerWithViewController:_weatherViewcontrller andImage:@"" andSelectImage:@""],
                             [self initialNaviControllerWithViewController:_meViewcontroller andImage:@"tabbar_me" andSelectImage:@"tabbar_me"]
                             ];
 }
